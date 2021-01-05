@@ -2,7 +2,8 @@
 
 // Define defaults for each variable.
 
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+// $base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-family: Roboto, monospace !default;;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -10,8 +11,8 @@ $base-line-height: 1.5 !default;
 
 $spacing-unit:     30px !default;
 
-$text-color:       #111 !default;
-$background-color: #fdfdfd !default;
+$text-color:       #fff !default;
+$background-color: #0c1117 !default;
 $brand-color:      #2a7ae2 !default;
 
 $grey-color:       #828282 !default;
@@ -33,6 +34,20 @@ $on-laptop:        800px !default;
 //     padding-left: $spacing-unit / 2;
 //   }
 // }
+@font-face {
+  font-family: "Avenir LT Pro 35 Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir LT Pro 35 Light"), url("/assets/fonts/AvenirLTProLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Pro 85 Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir LT Pro 85 Heavy"), url("/assets/fonts/AvenirLTProHeavy.woff") format("woff");
+}
+
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
@@ -45,7 +60,7 @@ $on-laptop:        800px !default;
 
 // Import partials.
 @import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
+  "regular/base",
+  "regular/layout",
+  "regular/syntax-highlighting"
 ;

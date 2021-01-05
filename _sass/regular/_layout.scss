@@ -1,3 +1,10 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
 /**
  * Site header
  */
@@ -106,7 +113,7 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid $background-color;
   padding: $spacing-unit 0;
 }
 
@@ -182,6 +189,7 @@
 
 .page-heading {
   @include relative-font-size(2);
+  font-family:"Avenir LT Pro 85 Heavy";
 }
 
 .post-list-heading {
