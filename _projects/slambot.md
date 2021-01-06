@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SLAMbot
-summary: test summary. describe the project itself here.
+summary: simulated SLAM robot navigating a maze environment.
 ---
 <!-- # SLAMbot -->
 <sup>NOTE: the Robotic Systems Laboratory course refers to this robot as an Mbot, but I will refer to it as SLAMbot for the sake of clarity about its functionality.</sup>
