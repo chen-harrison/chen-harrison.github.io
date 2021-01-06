@@ -3,24 +3,21 @@ layout: default
 ---
 
 <div class="home">
-  <h1 class="heading">{{ site.title | upcase }}</h1>
-  <h3 class="home-subheading">{{ site.headline }}</h3>
+  <h1 class="heading" style="margin-bottom:-0.25em">{{ site.title | upcase }}</h1>
+  <h3 class="subheading">{{ site.headline }}</h3>
   <p>{{ site.description }}</p>
 
-  <a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><span class="username">linkedin</span></a>
-  <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">github</a>
-  <a href="/assets/HarrisonChen_Resume.pdf" download>resume</a>
-  <a href="mailto:hlfchen@umich.edu">email</a>
-
-  <!-- <a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><svg class="svg-icon" viewBox="0 0 20 20"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg></a>
-  <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><svg class="svg-icon" viewBox="0 0 20 20"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg></a>
-  -->
+  <a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">linkedin</a> -
+  <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}">github</a> -
+  <a href="/assets/HarrisonChen_Resume.pdf" download>resume</a> -
+  <a href="mailto:{{ site.email }}">email</a>
   <br>
+  
   {%- if site.projects.size > 0 -%}
     <h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
     {%- for project in site.projects -%}
       <h3>
-        <a class="home-subheading" href="{{ project.url | relative_url }}">
+        <a class="subheading" href="{{ project.url | relative_url }}">
           {{ project.title | escape }}
         </a>
       </h3>

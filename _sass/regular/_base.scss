@@ -113,7 +113,8 @@ h3 {
  * Links
  */
 a {
-  color: $brand-color;
+  // color: $brand-color;
+  color: inherit;
   text-decoration: none;
 
   // &:visited {
@@ -121,17 +122,17 @@ a {
   // }
 
   &:hover {
-    color: $text-color;
+    // color: $text-color;
     text-decoration: underline;
   }
 
-  .social-media-list &:hover {
-    text-decoration: none;
+  // .social-media-list &:hover {
+  //   text-decoration: none;
 
-    .username {
-      text-decoration: underline;
-    }
-  }
+  //   .username {
+  //     text-decoration: underline;
+  //   }
+  // }
 }
 
 
