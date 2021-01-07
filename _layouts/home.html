@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
   <header>
-    <h1 class="heading" style="margin-bottom:-0.25em">{{ site.title | upcase }}</h1>
+    <h1 class="heading" style="font-size:80px;margin-bottom:0em;">{{ site.title | upcase }}</h1>
     <h3 class="subheading">{{ site.headline }}</h3>
   </header>
   <p>{{ site.description }}</p>
@@ -12,16 +12,23 @@ layout: default
   {%- include links.html -%}
   
   {%- if site.projects.size > 0 -%}
-    <h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
-    {%- for project in site.projects -%}
-      <h3>
-        <a class="subheading" href="{{ project.url | relative_url }}">
-          {{ project.title | escape }}
-        </a>
-      </h3>
-      <p> {{ project.summary }} </p>
-    {%- endfor -%}
+    <div style="margin-top:2em;margin-bottom:2em;">
+      <h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
+      <p style="float:right;"><img src="/assets/projects/4x4.jpg" height="320px"></p>
+      <p>
+      {%- for project in site.projects -%}
+        <h3>
+          <a class="subheading" href="{{ project.url | relative_url }}">
+            {{ project.title | escape }}
+          </a>
+        </h3>
+        <p>{{ project.summary }}</p>
+      {%- endfor -%}
+      </p>
+    </div>
   {%- endif -%}
+
+  <h2 class="heading">{{ page.list_title | default: "About" }}</h2>
 
   <!-- {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
