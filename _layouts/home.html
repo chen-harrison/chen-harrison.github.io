@@ -11,24 +11,11 @@ layout: default
   
   {%- include links.html -%}
   
-  {%- if site.projects.size > 0 -%}
-    <div style="margin-top:2em;margin-bottom:2em;">
-      <h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
-      <p style="float:right;"><img src="/assets/projects/4x4.jpg" height="320px"></p>
-      <p>
-      {%- for project in site.projects -%}
-        <h3>
-          <a class="subheading" href="{{ project.url | relative_url }}">
-            {{ project.title | escape }}
-          </a>
-        </h3>
-        <p>{{ project.summary }}</p>
-      {%- endfor -%}
-      </p>
-    </div>
-  {%- endif -%}
+  {%- include projects.html -%}
+  
 
   <h2 class="heading">{{ page.list_title | default: "About" }}</h2>
+
 
   <!-- {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>

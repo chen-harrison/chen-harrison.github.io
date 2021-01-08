@@ -1,0 +1,21 @@
+
+<!-- <div style="margin-top:2em;margin-bottom:2em;"> -->
+
+<h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
+
+<div class="projects">
+  <div>
+    {%- for project in site.projects -%}
+    <h3>
+      <a class="subheading" href="{{ project.url | relative_url }}">
+      {{ project.title | escape }}
+      </a>
+    </h3>
+    <p>{{ project.summary }}</p>
+    {%- endfor -%}
+    
+  </div>
+  <div style="flex-basis: auto;"><img src="/assets/rexarm.png"></div>
+</div>
+
+<!-- </div> -->
