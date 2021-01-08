@@ -98,17 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
 
-h1 {
-  @include relative-font-size(4);
-}
 
-h2 {
-  @include relative-font-size(3);
-}
-
-h3 {
-  @include relative-font-size(2);
-}
 
 /**
  * Links
@@ -124,7 +114,8 @@ a {
 
   &:hover {
     // color: $text-color;
-    text-decoration: underline;
+    color: lighten($orange, 20%);
+    // text-decoration: underline;
   }
 
   // .social-media-list &:hover {

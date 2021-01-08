@@ -10,15 +10,26 @@
 /**
  * My classes
  */
-.heading {
-  color: $blue;
+ .heading-top {
+  @include relative-font-size(5);
   font-family:"Avenir LT Pro 85 Heavy";
+  color: $blue;
   line-height: 1em;
   margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+
+.heading {
+  @include relative-font-size(3);
+  font-family:"Avenir LT Pro 85 Heavy";
+  color: $blue;
+  line-height: 1em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
 }
 
 .subheading {
+  @include relative-font-size(2);
   color: $orange;
 }
 

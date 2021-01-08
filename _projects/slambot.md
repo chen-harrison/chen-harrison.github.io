@@ -2,17 +2,18 @@
 layout: page
 title: SLAMbot
 summary: Simulated SLAM robot navigating a maze environment.
+repo: https://github.com/chen-harrison/slambot
 ---
 <sup style="line-height: 0.25em;"><u>NOTE</u>: the Robotic Systems Laboratory course refers to this robot as an Mbot, but I will refer to it as SLAMbot for the sake of clarity about its functionality.</sup>
 
 The SLAMbot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. The goal was to use C++ program a LiDAR-equipped two-wheeled robot to map out and navigate a maze environment given no prior information. Due to the COVID-19 pandemic, the project moved from an in-person group project to an individual one done via simulation, so all implementation was done by me.
 
 
-<h2 class="subheading">Part 1: Simultaneous Localization & Mapping (SLAM)</h2>
+<h1 class="heading">PART 1: SLAM</h1>
 
 The first part of the project involved the implementation of a SLAM system for the robot using a particle filter, which can be categorized into mapping, acting, and sensing functionality. **All modified files for this section can be found in ``/src/slam``**.
 
-### *Mapping*
+<h3 class="subheading">Mapping</h3>
 In ``mapping.cpp``, a discretized occupancy grid map in conjunction with an inverse sensor model is used to map out the surroundings. Operates under the assumption that location information is accurate.
 - LiDAR scan is adjusted to compensate for movement using odometry reading
 - Bresenham's line algorithm determines cells occupied by each LiDAR beam
@@ -23,13 +24,10 @@ In ``mapping.cpp``, a discretized occupancy grid map in conjunction with an inve
 <p align="center">
   <img src="/assets/projects/slambot/mapping.gif" width="360">
 </p>
-<!-- <p align="center">
-  <sup><em>Mapping simulation. We feed the robot the true pose in this example,<br>
-  which leads to an accurate mapping result</em></sup>
-</p> -->
+
 The mapping simulation above shows the occupancy grid mapping in action where the true pose is fed in, leading to an accurate mapping result.
 
-### *Acting*
+<h3 class="subheading">Acting</h3>
 In ``action_model.cpp``, the **sample_motion_model_odometry** algorithm from *Probabilistic Robotics* is used to model the imprecision of odometry readings and allow the propagation of the particles through the environment.
 - Noise model is characterized by four alpha coefficients, which were tuned consistently to optimize performance
 - Algorithm uses rotation-translation rotation and applies noise at each step
@@ -40,12 +38,8 @@ Below, we observe the propagation of particle point cloud without sensor model/B
 <p align="center">
   <img src="/assets/projects/slambot/action.gif" width="360">
 </p>
-<!-- <p align="center">
-  <sup><em>Propagation of particle point cloud without sensor model/Bayesian filter.<br>
-  Predictably, particles disperse and the map generated using odometry position is inaccurate</em></sup>
-</p> -->
 
-### *Sensing*
+<h3 class="subheading">Sensing</h3>
 In ``sensor_model.cpp``, a simplified version of the **beam_range_finder_model** algorithm from *Probabilistic Robotics* is used to evaluate the weight of each particle and update the robot's understanding of its position after the action model has been applied.
 - Each particle start with a log odds value of ``0.0``, and every beam (approximately 100) in the current LiDAR scan is used to increment its value
 - If the end of the beam...
@@ -59,35 +53,28 @@ In ``particle_filter.cpp``, these values are calculated, normalized for all part
 <p align="center">
   <img src="/assets/projects/slambot/sensor.gif" width="360">
 </p>
-<!-- <p align="center">
-  <sup><em>Brown arrow represents odometry (same as from action model) and blue arrow<br>
-  represents sensor model-corrected position, which is closer to true pose<br>
-  and thus yields a coherent map</em></sup>
-</p> -->
+
 Here, the brown arrow represents odometry (same as from action model) and blue arrow represents the sensor model-corrected position, which is closer to true pose
 and thus yields a coherent map.
 
-### *Complete SLAM*
+<h3 class="subheading">Complete SLAM</h3>
 With all parts now complete, we can test the full SLAM architecture in a maze, where we are given the odometry information and use it to find the SLAM pose and map our surroundings accordingly. The animation below demonstrates this (8x speed), where the brown arrow represents the odometry pose and blue arrow represents the SLAM pose.
 
 <p align="center">
   <img src="/assets/projects/slambot/slam.gif" width="360">
 </p>
-<!-- <p align="center">
-  <sup><em>Full SLAM implementation used for maze exploration given path (8x speed).<br>
-  Brown arrow represents odometry pose, blue arrow represents SLAM pose</em></sup>
-</p> -->
 
 
-<h2 class="subheading">Part 2: Path Planning</h2>
+<h1 class="heading">Part 2: Path Planning</h1>
+
 The second part consisted of developing a path planning algorithm, which uses an A* search that incorporates an additional cost based on distance to the nearest obstacle. **All modified files for this section can be found in ``/src/planning``** .
 
-### *Obstacle Distance Grid*
+<h3 class="subheading">Obstacle Distance Grid</h3>
 In ``obstacle_distance_grid.cpp``, a grid is constructed where each cell holds a value indicating its distance to the nearest obstacle.
 - Reads into occupancy grid map; all positive occupancy scores are considered obstacles and treated accordingly
 - First implementation used 4-directional distance, then moved to infinity norm, but I may continue to modify it to improve performance
 
-### *A\* Search*
+<h3 class="subheading">A\* Search</h3>
 In its current state, ``a_star.cpp`` currently holds a 4-directional A\* search algorithm that allow the robot to move around its environment as it maps it out.
 - **Cost:** 4-directional distance from the starting point
 - **Heuristic:** 4-directional distance to goal with additional obstacle distance penalty if value from obstacle distance grid falls below threshold value; grows exponentially with decreasing distance
@@ -95,14 +82,11 @@ In its current state, ``a_star.cpp`` currently holds a 4-directional A\* search 
 <p align="center">
   <img src="/assets/projects/slambot/a_star.gif" width="360">
 </p>
-<!-- <p align="center">
-  <sup><em>A* path planning test</em></sup>
-</p> -->
 
 In ``exploration.cpp``, the A\* search is used to plan paths to "frontiers", which are a series of adjacent cells on the edge of unknown cells and known free cells that are accessible to the robot through known free space.
 
 
-## Full Implementation  
+<h1 class="heading">FULL IMPLEMENTATION</h1>
 While the code in its current state does not work perfectly, the complete system should operate as follows:
 - Starting in unknown environment, scan surroundings in place and find nearest frontier using Euclidean distance
 - Calculate midpoint of the frontier and use a breadth-first search to find closest free cell to it
@@ -115,8 +99,5 @@ While the code in its current state does not work perfectly, the complete system
 <p align="center">
   <img src="/assets/projects/slambot/sim_map.png" width="360">
 </p>
-<!-- <p align="center">
-  <sup><em>Maze map generated using simulated full implementation (Entire run duration<br>
-  lasted 20+ minutes and didn't make sense to add here)</em></sup>
-</p> -->
+
 The resulting map is shown above, since duration of the run exceeded 20 minutes and was not pracitcal to show. The lack of seamlessness in the movement patterns diminishes map quality, but the result is still a coherent representation of the maze environment.

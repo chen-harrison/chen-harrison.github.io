@@ -3,10 +3,8 @@ layout: default
 ---
 
 <div class="home">
-  <header>
-    <h1 class="heading" style="font-size:80px;margin-bottom:0em;">{{ site.title | upcase }}</h1>
-    <h3 class="subheading">{{ site.headline }}</h3>
-  </header>
+  <h1 class="heading-top">{{ site.title | upcase }}</h1>
+  <h3 class="subheading">{{ site.headline }}</h3>
   <p>{{ site.description }}</p>
   
   {%- include links.html -%}
@@ -15,7 +13,7 @@ layout: default
 
   {%- include projects.html -%}
   
-  <h2 class="heading">{{ page.list_title | default: "About" }}</h2>
+  <h2 class="heading">{{ "About" | upcase }}</h2>
 
 
   <!-- {%- if site.posts.size > 0 -%}
