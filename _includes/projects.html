@@ -1,21 +1,38 @@
 
-<!-- <div style="margin-top:2em;margin-bottom:2em;"> -->
-
-<h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
-
-<div class="projects">
-  <div>
-    {%- for project in site.projects -%}
-    <h3>
-      <a class="subheading" href="{{ project.url | relative_url }}">
-      {{ project.title | escape }}
-      </a>
-    </h3>
-    <p>{{ project.summary }}</p>
-    {%- endfor -%}
-    
+<div style="margin-top:2em;margin-bottom:2em;">
+  <h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
+  <div class="projects">
+    <div>
+      {%- for project in site.projects -%}
+      <h3>
+        <a id="{{ project.title }}" onmouseover="changeIcon(this)" class="subheading" href="{{ project.url | relative_url }}">
+        {{ project.title | escape }}
+        </a>
+      </h3>
+      <p>{{ project.summary }}</p>
+      {%- endfor -%}
+      
+    </div>
+    <div style="flex-basis: auto;"><img id="project_icon" src="/assets/balancebot.png"></div>
   </div>
-  <div style="flex-basis: auto;"><img src="/assets/rexarm.png"></div>
 </div>
 
-<!-- </div> -->
+<script>
+  function changeIcon(project) {
+    var image = document.getElementById("project_icon");
+    switch(String(project.id)) {
+      case "balancebot":
+        image.src = "/assets/balancebot.png";
+        break;
+      case "rexarm":
+        image.src = "/assets/rexarm.png";
+        break;
+      case "SLAMbot":
+        image.src = "/assets/slambot.png";
+        break;
+      case "tribot":
+        image.src = "/assets/tribot.png";
+        break;
+    }
+  }
+</script>
