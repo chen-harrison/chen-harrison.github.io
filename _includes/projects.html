@@ -13,7 +13,7 @@
       {%- endfor -%}
       
     </div>
-    <div style="flex-basis: auto;"><img id="project_icon" src="/assets/balancebot.png"></div>
+    <div style="flex-basis: auto;"><img id="project_icon" src="/assets/home/blank.png"></div>
   </div>
 </div>
 
@@ -22,16 +22,16 @@
     var image = document.getElementById("project_icon");
     switch(String(project.id)) {
       case "balancebot":
-        image.src = "/assets/balancebot.png";
+        image.src = "/assets/home/balancebot.png";
         break;
       case "rexarm":
-        image.src = "/assets/rexarm.png";
+        image.src = "/assets/home/rexarm.png";
         break;
       case "SLAMbot":
-        image.src = "/assets/slambot.png";
+        image.src = "/assets/home/slambot.png";
         break;
       case "tribot":
-        image.src = "/assets/tribot.png";
+        image.src = "/assets/home/tribot.png";
         break;
     }
   }
