@@ -1,13 +1,13 @@
 ---
 layout: page
-title: balancebot
-summary: self-balancing inverted pendulum robot.
+title: Balancebot
+summary: Self-balancing inverted pendulum robot.
 ---
-<!-- # Balancebot -->
 The Balancebot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. It involved programming the functionality of a two-wheeled self-balancing robot that behaves like an inverted pendulum. The Robot Control Library (RCL) in C was used in conjunction with the Mobile Robot Cape (MRC), which was made custom and is capable of running the bot, voltage regulators, motor drivers, and IMU. This project was carried out with two other teammates, Ziyue Zhou and Yufei Zhu.
 
 
-## Part 1: Balancing
+<h2 class="subheading">Part 1: Balancing</h2>
+
 The first part of the project involved measuring and characterizing the robot in order to inform the development of the PID controllers used to keep it upright.
 
 ### *System Modeling*
@@ -19,7 +19,7 @@ The first part of the project involved measuring and characterizing the robot in
 
 ### *Balance & Heading Controller*
 <p align="center">
-  <img src="/assets/projects/controller.jpg" width="720">
+  <img src="/assets/projects/balancebot/controller.jpg" width="640">
 </p>
 
 - ``common/mb_controller.c`` : implemented two PID controllers used to balance the robot upright, and a third parallel PID controller to control direction
@@ -29,13 +29,14 @@ The first part of the project involved measuring and characterizing the robot in
 
 <br>
 <p align="center">
-  <img src="/assets/projects/theta.jpg" width="280">
-  <img src="/assets/projects/phi.jpg" width="280">
-  <img src="/assets/projects/psi.jpg" width="280">
+  <img src="/assets/projects/balancebot/theta.jpg" width="270">
+  <img src="/assets/projects/balancebot/phi.jpg" width="270">
+  <img src="/assets/projects/balancebot/psi.jpg" width="270">
 </p>
 
 
-## Part 2: Motion Control
+<h2 class="subheading">Part 2: Motion Control</h2>
+
 With the robot able to balance, the team then moved onto adding movement functionality, as well as methods to more accurately determine its relative position.
 
 ### *Manual & Autonomous Control*
@@ -45,10 +46,7 @@ With the robot able to balance, the team then moved onto adding movement functio
 
 ### *Odometry*
 <p align="center">
-  <img src="/assets/projects/odometry.jpg" width="720">
-</p>
-<p align="right">
-  <sup>(Source: ROB 550 lecture slides)</sup>
+  <img src="/assets/projects/balancebot/odometry.jpg" width="640">
 </p>
 
 - ``common/odometry.c`` : odometry functions added to locate robot based on wheel position, as read by wheel encoders
@@ -57,7 +55,7 @@ With the robot able to balance, the team then moved onto adding movement functio
 
 <br>
 <p align="center">
-  <img src="/assets/projects/compare.jpg" width="480">
+  <img src="/assets/projects/balancebot/compare.jpg" width="480">
 </p>
 
 
@@ -69,7 +67,7 @@ At the end of the project period, all teams in the class pitted their robots aga
 - ***4x4 Left Turns:*** autonomously drive along the edges of a 1m square for four full laps while balancing and not crossing over
 
 <p align="center">
-  <img src="/assets/projects/4x4.jpg" width="480">
+  <img src="/assets/projects/balancebot/4x4.jpg" width="480">
 </p>
 
 - ***Straight Line Drag Racing:*** autonomously drive straight for 11m as fast as possible, stopping within a 1m stop zone at the end, and staying balanced for 5 seconds

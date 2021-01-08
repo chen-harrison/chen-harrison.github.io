@@ -1,5 +1,5 @@
 
-<div style="margin-top:2em;margin-bottom:2em;">
+<div style="margin-top:4em;margin-bottom:4em;">
   <h2 class="heading">{{ page.list_title | default: "Projects" }}</h2>
   <div class="projects">
     <div>
@@ -21,16 +21,16 @@
   function changeIcon(project) {
     var image = document.getElementById("project_icon");
     switch(String(project.id)) {
-      case "balancebot":
+      case "Balancebot":
         image.src = "/assets/home/balancebot.png";
         break;
-      case "rexarm":
+      case "Rexarm":
         image.src = "/assets/home/rexarm.png";
         break;
       case "SLAMbot":
         image.src = "/assets/home/slambot.png";
         break;
-      case "tribot":
+      case "Tribot":
         image.src = "/assets/home/tribot.png";
         break;
     }

@@ -1,29 +1,27 @@
 ---
 layout: page
-title: rexarm
-summary: 4-DOF robot arm and kinect CV system used to find and move colored blocks.
+title: Rexarm
+summary: 4-DOF robot arm and Kinect CV system used to find and move colored blocks.
 ---
-<!-- # Rexarm -->
-
 The Rexarm project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. The objective was to program a 4-DOF robot manipulator that could use an overhead Kinect sensor to move and stack blocks based on color, but due to the COVID-19 pandemic, the project was cut short. Our team was still able to implement a majority of the desired functionality, however, the highlights of which I would like to share here. Thanks to teammates Preeti Kannapan and Niraj Patel for their work on the project.
 
+<sup style="line-height: 0.25em;"><u>NOTE 1</u>: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
+<br>
+<sup style="line-height: 0.25em;"><u>NOTE 2</u>: Due to the early end of the project, I was unable to capture relevant photos or data demonstrating the functionality, so many of these images and equations are taken from the ROB 550 lecture slides.</sup>
+
 <p align="center">
-  <img src="/assets/projects/architecture.jpg" width="480">
+  <img src="/assets/projects/rexarm/architecture.jpg" width="560">
 </p>
 
-<sup>NOTE 1: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
-<br>
-<sup>NOTE 2: Due to the early end of the project, I was unable to capture relevant photos or data demonstrating the functionality, so many of these images and equations are taken from the ROB 550 lecture slides.</sup>
 
-
-## Part 1: Kinect
+<h2 class="subheading">Part 1: Kinect</h2>
 
 ### *Camera Calibration*
 The Kinect camera calibration and implementation in the GUI allows the user to mouse over the video feed and be given the pixel location location, as well as corresponding world frame (robot frame) coordinates. To do this, we performed the following:
 - Found the affine transformation between the RGB and depth cameras by entering the coordinates of the board corners from both images into ``test_kinect.py``, then stored the result in ``kinect.py``
 
 <p align="center">
-  <img src="/assets/projects/calibration.jpg" width="640">
+  <img src="/assets/projects/rexarm/calibration.jpg" width="560">
 </p>
 
 - Used the provided ``util/camera_cal.py`` and a checkerboard in order to find the intrinsic matrix, allowing us to move between the camera frame coordinates and the pixel location in the camera output
@@ -37,7 +35,7 @@ This portion of the project was still being iterated upon, but we were able to g
 - Use shape contours to intialize and store a ``Block`` class variable, which stores the block height, pixel location, world frame location, orientation, and color, used by the robot later to find and grab the block
 
 
-## Part 2: Robot Manipulator
+<h2 class="subheading">Part 2: Robot Manipulator</h2>
 
 ### *Trajectory Planning*
 ``trajectory_planner.py`` is where we programmed the behavior of the robot when moving between waypoints.
@@ -45,7 +43,7 @@ This portion of the project was still being iterated upon, but we were able to g
 - Given initial and final positions and velocities, we solve for the position equation of each joint, then the max speed dictates the initial and final times
 
 <p align="center">
-  <img src="/assets/projects/cubic.jpg" width="640">
+  <img src="/assets/projects/rexarm/cubic.jpg" width="640">
 </p>
 
 - Interpolated positions are fed to the Rexarm in order to replicate the desired trajectory
@@ -53,7 +51,7 @@ This portion of the project was still being iterated upon, but we were able to g
 ### *Forward/Inverse Kinematics*
 
 <p align="center">
-  <img src="/assets/projects/rexarm.jpg" width="360">
+  <img src="/assets/projects/rexarm/rexarm.jpg" width="360">
 </p>
 
 The team opted to use Denavit-Hartenberg parameters to implement kinematics, done mostly in ``kinematics.py``.
@@ -65,7 +63,7 @@ The team opted to use Denavit-Hartenberg parameters to implement kinematics, don
   - Solving for all four solutions to reach the wrist joint position, then adding necessary wrist joint angle
   
 <p align="center">
-  <img src="/assets/projects/ik.jpg" width="480">
+  <img src="/assets/projects/rexarm/ik.jpg" width="480">
 </p>
 
 ### *Next Steps*
