@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SLAMbot
-summary: Simulated SLAM robot navigating a maze environment.
+summary: Simulated robot navigating maze environment with mapping, localization, and path planning functionality.
 repo: https://github.com/chen-harrison/slambot
 ---
 <sup style="line-height: 0.25em;"><u>NOTE</u>: the Robotic Systems Laboratory course refers to this robot as an Mbot, but I will refer to it as SLAMbot for the sake of clarity about its functionality.</sup>
