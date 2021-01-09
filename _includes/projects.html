@@ -2,7 +2,7 @@
 <div style="margin-top: 4em;margin-bottom: 4em;">
   <h2 class="heading">{{ page.list_title | default: "Projects" | upcase }}</h2>
   <div class="flex">
-    <div>
+    <div style="max-width: 400px;">
       {%- for project in site.projects -%}
       <h3 class="subheading">
         <a id="{{ project.title }}" onmouseover="changeIcon(this)" href="{{ project.url | relative_url }}">

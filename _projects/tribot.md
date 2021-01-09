@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tribot
-summary: Braitenberg vehicle and maze navigation simulations.
+summary: Collision detection/resolution and maze navigation simulations.
 repo: https://github.com/chen-harrison/tribot
 ---
 <sup style="line-height: 0.25em;"><u>NOTE</u>: Course and instructor name omitted at his request, likely to prevent future students from finding and referencing this repository for solutions</sup>

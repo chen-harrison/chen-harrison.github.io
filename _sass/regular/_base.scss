@@ -104,27 +104,13 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  // color: $brand-color;
   color: $orange-color;
   text-decoration: none;
 
-  // &:visited {
-  //   color: darken($brand-color, 15%);
-  // }
-
   &:hover {
-    // color: $white-color;
     color: lighten($orange-color, 20%);
     // text-decoration: underline;
   }
-
-  // .social-media-list &:hover {
-  //   text-decoration: none;
-
-  //   .username {
-  //     text-decoration: underline;
-  //   }
-  // }
 }
 
 

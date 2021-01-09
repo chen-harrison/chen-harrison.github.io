@@ -22,8 +22,6 @@ title: Harrison Chen
 headline: Robotics Engineer
 email: hlfchen@umich.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  My goal is to work on innovative and ethical technologies that improve the lives of others and the environment around us.
-  If any of this resonates with you, please check out my links and projects below!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://chen-harrison.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: chen-harrison

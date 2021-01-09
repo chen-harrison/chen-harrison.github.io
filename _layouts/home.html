@@ -5,7 +5,10 @@ layout: default
 <div class="home">
   <h1 class="heading-top">{{ site.title | upcase }}</h1>
   <h3 class="subheading">{{ site.headline }}</h3>
-  <p>{{ site.description }}</p>
+  <p>
+    My goal is to work on innovative and ethical technologies that improve the lives of others and the environment around us.
+    If any of this resonates with you, please check out my links and projects below!
+  </p>
   
   {%- include links.html -%}
   
@@ -13,6 +16,7 @@ layout: default
 
   {%- include about.html -%}
 
+  <!-- BLOG POST CONTENT -->
   <!-- {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
