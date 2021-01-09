@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
+  color: $white-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   // color: $brand-color;
-  color: $orange;
+  color: $orange-color;
   text-decoration: none;
 
   // &:visited {
@@ -113,8 +113,8 @@ a {
   // }
 
   &:hover {
-    // color: $text-color;
-    color: lighten($orange, 20%);
+    // color: $white-color;
+    color: lighten($orange-color, 20%);
     // text-decoration: underline;
   }
 
@@ -216,7 +216,7 @@ pre {
     width: 40px;
     height: 40px;
     display: inline-block;
-    fill: $orange;
+    fill: $orange-color;
     padding-right: 5px;
     vertical-align: text-top;
 }
@@ -236,7 +236,7 @@ table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  color: lighten($text-color, 18%);
+  color: lighten($white-color, 18%);
   border-collapse: collapse;
   border: 1px solid $grey-color-light;
   tr {
