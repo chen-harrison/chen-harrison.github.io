@@ -17,6 +17,10 @@
   line-height: 1em;
   margin-top: 0.5em;
   margin-bottom: 0em;
+
+  @include media-query($on-palm) {
+    @include relative-font-size(4);
+  }
 }
 
 .heading {
