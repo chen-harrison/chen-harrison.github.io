@@ -1,0 +1,64 @@
+/* Global variables */
+:root {
+	/* Colors */
+	--lightgray: rgb(230, 237, 243);
+	--orange: rgb(255, 166, 87);
+	--green: rgb(81, 198, 96);
+	--lightgreen: rgb(155, 214, 165);
+	--lightblue: rgb(165, 214, 255) ;
+  --blue: rgb(121, 192, 255);
+	--purple: rgb(210, 168, 255);
+	--dark: rgb(13, 17, 23);
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Roboto Mono Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Roboto Mono Regular"), url("/fonts/RobotoMonoRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Pro 85 Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir LT Pro 85 Heavy"), url("/fonts/AvenirLTProHeavy.woff") format("woff");
+}
+
+body {
+	font-family: "Roboto Mono Regular", monospace;
+	color: var(--lightgray);
+	background: var(--dark);
+	max-width: 1000px;
+	margin: auto;
+  padding: 5%;
+	/* border: 2px solid white;  */
+}
+
+h1 {
+	font-family: "Avenir LT Pro 85 Heavy", sans-serif;
+	font-size: 50px;
+	margin-bottom: 0px;
+	color: var(--blue);
+}
+
+h3 {
+	font-size: 20px;
+	color: var(--orange);
+}
+
+.links img {
+	width: 16px;
+	display: inline;
+	vertical-align: bottom;
+}
+
+.links a {
+	text-decoration: none;
+	color: var(--green);
+}
+
+.links a:hover {
+	color: var(--lightgreen);
+}
