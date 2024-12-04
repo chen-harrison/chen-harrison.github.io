@@ -27,18 +27,27 @@
 }
 
 body {
-	font-family: "Roboto Mono Regular", monospace;
-	color: var(--lightgray);
-	background: var(--dark);
-	max-width: 1000px;
-	margin: auto;
+  font-family: "Roboto Mono Regular", monospace;
+  color: var(--lightgray);
+  background: var(--dark);
+  width: 80%;
+  max-width: 1000px;
+  min-width: 500px;
+  margin: auto;
   padding: 5%;
 	/* border: 2px solid white;  */
 }
 
 h1 {
 	font-family: "Avenir LT Pro 85 Heavy", sans-serif;
-	font-size: 50px;
+	font-size: 54px;
+	text-transform: uppercase;
+	color: var(--blue);
+}
+
+h2 {
+	font-family: "Avenir LT Pro 85 Heavy", sans-serif;
+	font-size: 36px;
 	margin-bottom: 0px;
 	color: var(--blue);
 }
@@ -48,10 +57,17 @@ h3 {
 	color: var(--orange);
 }
 
+h4 {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--purple);
+  margin-top: -4px
+}
+
 .links img {
 	width: 16px;
 	display: inline;
-	vertical-align: bottom;
+	vertical-align: auto;
 }
 
 .links a {
@@ -61,4 +77,11 @@ h3 {
 
 .links a:hover {
 	color: var(--lightgreen);
+}
+
+footer hr {
+	height: 1px;
+	border-width: 0px;
+	background-color: var(--lightgray);
+	border-color: var(--lightgray);
 }
