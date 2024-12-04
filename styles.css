@@ -1,14 +1,14 @@
 /* Global variables */
 :root {
-	/* Colors */
-	--lightgray: rgb(230, 237, 243);
-	--orange: rgb(255, 166, 87);
-	--green: rgb(81, 198, 96);
-	--lightgreen: rgb(155, 214, 165);
-	--lightblue: rgb(165, 214, 255) ;
+  /* Colors */
+  --lightgray: rgb(230, 237, 243);
+  --orange: rgb(255, 166, 87);
+  --green: rgb(81, 198, 96);
+  --lightgreen: rgb(155, 214, 165);
+  --lightblue: rgb(165, 214, 255) ;
   --blue: rgb(121, 192, 255);
-	--purple: rgb(210, 168, 255);
-	--dark: rgb(13, 17, 23);
+  --purple: rgb(210, 168, 255);
+  --dark: rgb(13, 17, 23);
 }
 
 /* Fonts */
@@ -35,26 +35,26 @@ body {
   min-width: 500px;
   margin: auto;
   padding: 5%;
-	/* border: 2px solid white;  */
+  /* border: 2px solid white;  */
 }
 
 h1 {
-	font-family: "Avenir LT Pro 85 Heavy", sans-serif;
-	font-size: 54px;
-	text-transform: uppercase;
-	color: var(--blue);
+  font-family: "Avenir LT Pro 85 Heavy", sans-serif;
+  font-size: 54px;
+  text-transform: uppercase;
+  color: var(--blue);
 }
 
 h2 {
-	font-family: "Avenir LT Pro 85 Heavy", sans-serif;
-	font-size: 36px;
-	margin-bottom: 0px;
-	color: var(--blue);
+  font-family: "Avenir LT Pro 85 Heavy", sans-serif;
+  font-size: 36px;
+  margin-bottom: 0px;
+  color: var(--blue);
 }
 
 h3 {
-	font-size: 20px;
-	color: var(--orange);
+  font-size: 20px;
+  color: var(--orange);
 }
 
 h4 {
@@ -65,23 +65,23 @@ h4 {
 }
 
 .links img {
-	width: 16px;
-	display: inline;
-	vertical-align: auto;
+  width: 16px;
+  display: inline;
+  vertical-align: auto;
 }
 
 .links a {
-	text-decoration: none;
-	color: var(--green);
+  text-decoration: none;
+  color: var(--green);
 }
 
 .links a:hover {
-	color: var(--lightgreen);
+  color: var(--lightgreen);
 }
 
 footer hr {
-	height: 1px;
-	border-width: 0px;
-	background-color: var(--lightgray);
-	border-color: var(--lightgray);
+  height: 1px;
+  border-width: 0px;
+  background-color: var(--lightgray);
+  border-color: var(--lightgray);
 }
