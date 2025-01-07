@@ -79,6 +79,24 @@ h4 {
   color: var(--lightgreen);
 }
 
+.entry {
+    display: flex;
+    margin: 20px auto;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease
+}
+
+.entry:hover {
+  transform: scale(1.01);
+}
+
+.entry img {
+    height: 200px;
+    border-radius: 8px;
+}
+
 footer hr {
   height: 1px;
   border-width: 0px;
