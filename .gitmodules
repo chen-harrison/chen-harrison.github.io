@@ -1,3 +1,4 @@
 [submodule "resume"]
 	path = resume
 	url = git@github.com:chen-harrison/resume.git
+    branch = main

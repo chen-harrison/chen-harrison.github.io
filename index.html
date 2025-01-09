@@ -6,48 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Harrison Chen</title>
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.png">
 </head>
 
 <body>
   <main>
-    <h1 style="margin-bottom: -10px;">Harrison Chen</h1>
+    <h1 style="margin-bottom: -15px;">Harrison Chen</h1>
     <h3>Robotics Software Engineer</h2>
 
       <div class="links">
         <a href="https://linkedin.com/in/chen-harrison/" target=_blank><img src="icons/linkedin.png"> LinkedIn</a> -
         <a href="https://github.com/chen-harrison" target=_blank><img src="icons/github.png"> GitHub</a> -
-        <a href="resume/resume.pdf" download><img src="icons/resume.png"> Resume</a> -
+        <a href="resume/HarrisonChen_Resume.pdf" download><img src="icons/resume.png"> Resume</a> -
         <a href="mailto:hchen.robotics@gmail.com" target=_blank><img src="icons/email.png"> Email</a>
       </div>
 
-      <br>
-      <p>
-        Hello! I'm Harrison, an Autonomy Engineer at PDW, currently based in NYC and working on drone autonomy. My
-        interests and skills lie predominantly in mobile robotics, and I hope to work on technologies that make a
-        positive impact.
+      <p style="margin-top: 30px; margin-bottom: 60px;">
+        Hello! I'm Harrison, a robotics software engineer experienced in developing mobile robotics systems. My work has been predominantly in navigation, mapping, and perception, with supplementary knowledge in localization and SLAM from graduate coursework. I'm a self-motivated learner and capable problem solver, and I want to use my abilities to contribute to technologies that will help others. Thanks for stopping by!
       </p>
-
+      
       <section>
         <h2>Work</h2>
 
-        <a href="work/pdw.html" class="entry">
-          <img src="imgs/pdw/octomap_mocap_1.png" alt="A 3D voxel representation of an indoor area">
-          <div class="entry-text">
+        <div class="entry">
+          <img src="imgs/octomap.png" alt="A 3D voxel representation of an indoor area">
+          <div>
             <h3>Autonomy Engineer @ PDW</h3>
-            <h4>2022 - Current</h4>
-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac augue vel nisi
-            volutpat suscipit. Fusce tristique, erat non ultricies euismod, mi libero convallis
-            nisl, id convallis metus enim ut justo.
-
+            <h4>2022 - 2025</h4>
+            <ul class="skills">
+              <li>C++</li>
+              <li>ROS</li>
+              <li>PX4</li>
+              <li>Eigen</li>
+              <li>PCL</li>
+              <li>PyTorch</li>
+            </ul>
+            <p>
+              Contributed to development of the autonomy stack for a quadcopter, with primary contributions in trajectory generation, path planning, 3D mapping, and learning-based depth estimation.
+            </p>
           </div>
-        </a>
+        </div>
 
-        <h3>Robotics Engineer @ Jugaad Labs</h3>
-        <h4>2021 - 2022</h4>
+        <div class="entry">
+          <img src="imgs//centertrack.png" alt="Object detection on an image with a car">
+          <div>
+            <h3>Robotics Engineer @ Jugaad Labs</h3>
+            <h4>2021 - 2022</h4>
+            <ul class="skills">
+              <li>Python</li>
+              <li>ROS</li>
+              <li>Kalman filter</li>
+              <li>sensor calibration</li>
+            </ul>
+            <p>
+              Worked on an automotive situational awareness system that used object detection and tracking on nearby vehicles and pedestrians to anticipate risky scenarios.
+              <!-- Used real-time object detection and tracking to monitor vehicles in semi-truck's surroundings. Projected in-image tracking into 3D space and smoothed tracked object trajectories with Kalman filtering. -->
+            </p>
+          </div>
+        </div>
 
-        <h3>Applied Product Development Intern @ FANUC</h3>
-        <h4>2020</h4>
+        <div class="entry">
+          <img src="imgs/torchmate.png" alt="">
+          <div>
+            <h3>Applied Product Development Intern @ FANUC</h3>
+            <h4>2020</h4>
+            <ul class="skills">
+              <li>manipulation</li>
+              <li>simulation</li>
+            </ul>
+            <p>
+              Augmented welding robot recovery mechanism by allowing it to recalibrate in any reachable end effector orientation/position. Validated implementation in simulation and on robot.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -56,15 +87,15 @@
         <h3>MS Robotics @ University of Michigan</h3>
         <h3>BS MechEng @ Northwestern University</h3>
         <h3>Personal Study</h3>
-        <ul>
+        <!-- <ul>
           <li>The Missing Semester of your CS Education</li>
           <li>Beginning C++ Programming - From Beginner to Beyond (Udemy)</li>
-        </ul>
+        </ul> -->
       </section>
 
       <section>
         <h2>About Me</h2>
-        <p>Interests:</p>
+        <!-- <p>Interests:</p> -->
       </section>
   </main>
   <!-- <footer>
