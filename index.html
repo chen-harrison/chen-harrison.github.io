@@ -12,20 +12,24 @@
 <body>
   <main>
     <!-- Sceenshot of website, which should appear in previews -->
-    <img src="imgs/preview.jpg" style="display: none;">
+    <img src="imgs/preview.jpg" style="display: none;" alt="Screenshot of top of website">
 
     <!-- Heading: name, title, links -->
-    <div class="heading">
-      <!-- <img src="imgs/headshot.jpg"> -->
+    <div id="heading">
+      <!-- <img src="imgs/headshot.jpg" alt="Headshot photo of Harrison Chen"> -->
       <div>
         <h1>Harrison Chen</h1>
         <h3>Robotics Software Engineer</h2>
 
-          <div class="links">
-            <a href="https://linkedin.com/in/chen-harrison/" target=_blank><img src="icons/linkedin.png"> LinkedIn</a> -
-            <a href="https://github.com/chen-harrison" target=_blank><img src="icons/github.png"> GitHub</a> -
-            <a href="resume/HarrisonChen_Resume.pdf" download><img src="icons/resume.png"> Resume</a> -
-            <a href="mailto:hchen.robotics@gmail.com" target=_blank><img src="icons/email.png"> Email</a>
+          <div id="links">
+            <a href="https://linkedin.com/in/chen-harrison/" target=_blank><img src="icons/linkedin.png"
+                alt="LinkedIn logo"> LinkedIn</a> -
+            <a href="https://github.com/chen-harrison" target=_blank><img src="icons/github.png" alt="GitHub logo">
+              GitHub</a> -
+            <a href="resume/HarrisonChen_Resume.pdf" download><img src="icons/resume.png" alt="Sheet of paper icon">
+              Resume</a> -
+            <a href="mailto:hchen.robotics@gmail.com" target=_blank><img src="icons/email.png" alt="Envelope icon">
+              Email</a>
           </div>
       </div>
     </div>
@@ -39,7 +43,7 @@
     </p>
 
     <!-- Work -->
-    <section style="margin-top: 60px;">
+    <section id="work">
       <h2>Work</h2>
 
       <div class="entry">
@@ -80,9 +84,9 @@
       </div>
 
       <div class="entry">
-        <img src="imgs/torchmate.jpg" alt="">
+        <img src="imgs/torchmate.jpg" alt="Welding robot arm approaching recovery tool">
         <div>
-          <h3>Applied Product Development Intern @ FANUC</h3>
+          <h3>Product Development Intern @ FANUC</h3>
           <h4>2020</h4>
           <ul class="skills">
             <li>manipulation</li>
@@ -96,29 +100,112 @@
       </div>
     </section>
 
-    <!-- Study -->
-    <section style="margin-top: 60px;">
-      <h2>Learning</h2>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
 
-      <h3>MS Robotics @ University of Michigan</h3>
-      <h3>BS MechEng @ Northwestern University</h3>
-      <h3>Personal Study</h3>
-      <!-- <ul>
-          <li>The Missing Semester of your CS Education</li>
-          <li>Beginning C++ Programming - From Beginner to Beyond (Udemy)</li>
-        </ul> -->
+      <a class="entry" href="https://github.com/chen-harrison/slambot" target=_blank>
+        <img src="imgs/slambot.jpg" alt="SLAMbot">
+        <div>
+          <h3>SLAMbot</h3>
+          <ul class="skills">
+            <li>C++</li>
+            <li>SLAM</li>
+            <li>lidar</li>
+            <li>path planning</li>
+            <li>MCL</li>
+          </ul>
+          <p>
+            Implemented a simulated SLAM robot capable of using a 2D lidar to map out and navigate an unknown maze
+            environment.
+          </p>
+        </div>
+      </a>
+
+      <a class="entry" href="https://github.com/chen-harrison/balancebot" target=_blank>
+        <img src="imgs/balancebot.jpg" alt="Balancebot">
+        <div>
+          <h3>Balancebot</h3>
+          <ul class="skills">
+            <li>C</li>
+            <li>PID</li>
+            <li>odometry</li>
+            <li>Kalman filter</li>
+          </ul>
+          <p>
+            Programmed a two-wheeled self-balancing robot to self-balance, autonomously drive along a pre-determined
+            path, and to navigate through an obstacle course via operator input.
+          </p>
+        </div>
+      </a>
+    </section>
+
+    <!-- Study -->
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="entry">
+        <!-- <img src="imgs/michigan.jpg" alt="University of Michigan logo" style="height: 140px; width: 140px;"> -->
+        <div>
+          <h3>Personal Study</h3>
+          <p>Courses/material that I've studied in own time, on my long train commutes and at home:</p>
+          <ul>
+            <li>
+              <a href="https://missing.csail.mit.edu/" target=_blank>The Missing Semester of Your CS Education</a> (my
+              notes <a href="https://github.com/chen-harrison/missing-semester-notes" target=_blank>here</a>)
+            </li>
+            <li>
+              <a href="https://www.udemy.com/course/beginning-c-plus-plus-programming/" target=_blank>Beginning C++
+                Programming - From Beginner to Beyond</a>
+            </li>
+            <li><a href="https://www.youtube.com/playlist?list=PLgnQpQtFTOGQ7eZU0tzmyjSV5w5lt28p8"
+                target=_blank>Robotics and PCV Basics by Cyrill Stachniss</a></li>
+            <li><a href="https://learngitbranching.js.org/" target=_blank>Learn Git Branching</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <!-- <img src="imgs/michigan.jpg" alt="University of Michigan logo" style="height: 140px; width: 140px;"> -->
+        <div>
+          <h3>MS Robotics @ University of Michigan</h3>
+          <p>GPA: 3.96 / 4.00</p>
+          <p>
+            Relevant coursework: Mobile Robotics, Robotic Systems Laboratory, Deep Learning for Computer Vision, Robot
+            Modeling and Control
+          </p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <!-- <img src="imgs/northwestern.jpg" alt="Northwestern University logo" style="height: 140px; width: 140px;"> -->
+        <div>
+          <h3>BS Mechanical Eng @ Northwestern University</h3>
+          <p>GPA: 3.80 / 4.00</p>
+          <p>
+            Relevant coursework: Machine Dynamics, Electronics Design, Advanced Solid Modeling, Intro to Mechatronics
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- About Me -->
-    <section>
+    <section id="aboutme">
       <h2>About Me</h2>
-      <!-- <p>Interests:</p> -->
+      <div class="entry">
+        <img src="imgs/chicago.jpg" alt="Harrison Chen posing next to the Chicago River">
+        <div>
+          <p>Coming soon!</p>
+
+        </div>
+      </div>
     </section>
   </main>
   <!-- <footer>
       <hr>
-      <p>&copy; 2024 Harrison Chen</p>
-    </footer> -->
+      <p>&copy; 2025 Harrison Chen</p>
+  </footer> -->
 </body>
 
 </html>
