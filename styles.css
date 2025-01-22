@@ -42,7 +42,7 @@ body {
 h1 {
   font-size: 54px;
   margin: 0 auto -15px;
-  font-family: "Avenir LT Pro 85 Heavy", sans-serif;
+  font-family: "Avenir LT Pro 85 Heavy", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: var(--blue);
 }
@@ -50,7 +50,7 @@ h1 {
 h2 {
   font-size: 36px;
   margin: 0 auto;
-  font-family: "Avenir LT Pro 85 Heavy", sans-serif;
+  font-family: "Avenir LT Pro 85 Heavy", Helvetica, Arial, sans-serif;
   color: var(--blue);
 }
 
@@ -160,6 +160,15 @@ section {
 
 .entry a:hover {
   color: var(--lightpurple);
+}
+
+#aboutme p {
+  margin: 0;
+}
+
+#aboutme .prompt {
+  color: var(--orange);
+  font-weight: bold;
 }
 
 ul.skills {
