@@ -187,9 +187,18 @@ ul.skills li {
   text-align: center;
 }
 
-footer hr {
+/* footer hr {
   height: 1px;
   border-width: 0px;
   background-color: var(--lightgray);
   border-color: var(--lightgray);
+} */
+
+footer {
+  margin-top: 100px;
+}
+
+footer p {
+  font-size: small;
+  text-align: center;
 }
