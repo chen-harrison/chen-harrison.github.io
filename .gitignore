@@ -1,0 +1,6 @@
+# Generated recipes section (built in CI from obsidian-vault); keep only the source files
+/recipes/*
+!/recipes/build.py
+!/recipes/recipes.css
+!/recipes/recipe.html
+!/recipes/index-template.html

@@ -1,0 +1,141 @@
+/* Recipes section, loaded after styles.css (reuses its colors, fonts, and headings) */
+main {
+  padding-top: 3rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.recipe-tags {
+  color: var(--text-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Grid page */
+#recipe-search {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-nav);
+  border: 1px solid var(--border);
+  border-radius: 0.2rem;
+}
+
+#recipe-search:focus {
+  outline: none;
+  border-color: var(--text-muted);
+}
+
+#recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.2rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.recipe-card:hover {
+  border-color: var(--text-muted);
+}
+
+.recipe-card h3 {
+  font-size: 1rem;
+  transition: color 0.15s ease;
+}
+
+.recipe-card:hover h3 {
+  color: var(--hover);
+}
+
+.recipe-card .recipe-tags {
+  margin: 0;
+}
+
+#no-results {
+  color: var(--text-muted);
+}
+
+/* Recipe page */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover {
+  color: var(--hover);
+}
+
+.recipe h2 {
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
+.recipe-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+}
+
+.recipe-source {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.recipe-source a {
+  color: var(--text-muted);
+}
+
+.recipe-source a:hover {
+  color: var(--hover);
+}
+
+.recipe-columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem;
+}
+
+.recipe h3 {
+  color: var(--text-accent);
+}
+
+.recipe ul,
+.recipe ol {
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.recipe li {
+  margin-bottom: 0.5rem;
+}
+
+/* Extra space between the bullet and the ingredient text */
+.ingredients li {
+  padding-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .recipe-columns {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

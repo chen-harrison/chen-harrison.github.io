@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/recipes/recipes.css">
+  <title>$title$</title>
+  <link rel="icon" type="image/x-icon" href="/icons/favicon.jpg">
+</head>
+
+<body>
+  <main>
+    <h2>$title$</h2>
+    <input id="recipe-search" type="search" placeholder="Search recipes..." aria-label="Search recipes">
+
+    <div id="recipe-grid">
+$cards$
+    </div>
+    <p id="no-results" hidden>No recipes match.</p>
+  </main>
+
+  <!-- Hide cards whose name and tags don't contain every typed word -->
+  <script>
+    const search = document.getElementById("recipe-search");
+    const cards = document.querySelectorAll(".recipe-card");
+    const noResults = document.getElementById("no-results");
+
+    search.addEventListener("input", () => {
+      const words = search.value.toLowerCase().split(/\s+/).filter(Boolean);
+      let shown = 0;
+      cards.forEach((card) => {
+        const match = words.every((word) => card.dataset.search.includes(word));
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      noResults.hidden = shown > 0;
+    });
+  </script>
+</body>
+
+</html>

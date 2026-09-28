@@ -1,0 +1,77 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Daily check for recipe changes in obsidian-vault; only redeploys if they changed
+  schedule:
+    - cron: "0 9 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch recipes from obsidian-vault
+        uses: actions/checkout@v4
+        with:
+          repository: chen-harrison/obsidian-vault
+          ssh-key: ${{ secrets.VAULT_DEPLOY_KEY }}
+          path: vault
+          sparse-checkout: Recipes
+
+      - name: Copy recipes
+        run: |
+          mkdir -p recipes/md
+          cp vault/Recipes/*.md recipes/md/
+          rm -rf vault
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      # On scheduled runs, compare against the fingerprint published by the last deploy
+      - name: Check for recipe changes
+        id: changes
+        if: github.event_name == 'schedule'
+        run: |
+          new=$(python3 recipes/build.py --fingerprint)
+          old=$(curl -fsSL "${{ steps.pages.outputs.base_url }}/recipes/version.txt" || true)
+          if [ "$new" = "$old" ]; then
+            echo "Recipes unchanged, skipping deploy"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install pandoc
+        if: steps.changes.outputs.changed != 'false'
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Build recipes
+        if: steps.changes.outputs.changed != 'false'
+        run: |
+          python3 recipes/build.py
+          rm -rf recipes/md
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.changes.outputs.changed != 'false'
+        with:
+          path: .
+
+      - id: deployment
+        if: steps.changes.outputs.changed != 'false'
+        uses: actions/deploy-pages@v4
